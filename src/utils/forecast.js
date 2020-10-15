@@ -22,7 +22,8 @@ const forecast = (latitude, longtitude, callback) => {
             callback(body.error.info, undefined)
         } else {
             callback(undefined,
-                body.current.weather_descriptions[0] + ' it is currently ' + body.current.temperature + ' degrees out. there is a ' + body.current.precip + '% chance of rain', 
+                'Observation was taken at ' + body.current.observation_time + '. ' + body.current.weather_descriptions[0] + '. it is currently ' + body.current.temperature + ' degrees out. there is a ' + body.current.precip + 
+                '% chance of rain, with a wind speed of ' + body.current.wind_speed + body.current.wind_dir +'.'
                 
             )
         }
