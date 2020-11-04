@@ -41,8 +41,8 @@ app.get('/about', (req,res) => {
 app.get('/help', (req,res) => {
     res.render('help', {
         title: "Help page",
-        message: "Please contact 079xxxxxx",
-        name: "Majd"
+        message: "Please contact via email: Majd.M4a4@gmail.com",
+        name: "Majd Yahia"
     })
 })
 
@@ -76,25 +76,6 @@ app.get('/weather', (req,res) => {
 
     
 })
-
-//
-// This below is example!
-//
-// app.get('/products', (req, res) => {
-    
-//     if (!req.query.search) {
-//         return res.send({
-//             error: 'You must provide a search term'
-//         })
-//     } 
-
-//     console.log(req.query)
-//     res.send({
-//         products: []
-//     })
-    
-// })
-
 
 
 app.get('/help/*', (req, res) => {

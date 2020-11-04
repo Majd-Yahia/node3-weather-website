@@ -20,6 +20,7 @@ footer {
 
 header {
     margin-top: 16px;
+    margin-left: 15%;
     margin-bottom: 48px;
 }
 
@@ -40,4 +41,9 @@ header a {
 
 .main-content {
     flex-grow: 1;
+}
+
+.icon {
+    width: 50px;
+    margin-right: 16px;
 }
