@@ -35,6 +35,23 @@ header a {
     text-decoration: none;
 }
 
+.cont {
+    display: flex;
+    flex-wrap:  wrap;
+    align-content: flex-start;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 25%;
+}
+
+.item {
+    flex-basis: 3000px;
+}
+
+.item2 {
+    flex-basis: 140px;
+}
+
 .portrait {
     width: 250px;
 }
