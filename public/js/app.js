@@ -4,7 +4,6 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
-
 const address = document.querySelector('#address')
 const date = document.querySelector('#date')
 const temp = document.querySelector('#temp')
@@ -33,8 +32,6 @@ weatherForm.addEventListener('submit', (e) => {
             messageOne.textContent = ''
             messageTwo.textContent =  ''
 
-            console.log(data)
-
             address.textContent = data.forecastData.request.query
             date.textContent = data.forecastData.location.localtime
             temp.textContent = data.forecastData.current.temperature + '\°'
@@ -43,9 +40,15 @@ weatherForm.addEventListener('submit', (e) => {
             cloud.textContent = 'Cloud: ' + data.forecastData.current.cloudcover + '%'
             humid.textContent = 'Humidity: ' + data.forecastData.current.humidity + '%'
 
-            weatherIcon.src = '/img/partlyCloudy.png'
+            weatherIcon.style.width = "150px"
+            weatherIcon.style.height = "150px"
+
+            desc = data.forecastData.current.weather_descriptions[0]
             
-            }
+            weatherIcon.src = '/img/partly_cloudy.png'
+            
+        }
+
         })
     })
 

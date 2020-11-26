@@ -24,7 +24,7 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     res.render("index", {
-        title: "Weather App",
+        title: "Panda Weather",
         name: "Majd Yahia"
     })
 })
@@ -32,20 +32,19 @@ app.get('', (req, res) => {
 
 app.get('/about', (req,res) => {
     res.render('about', {
-        title: "About Me",
+        title: "Panda Weather",
         name: "Majd Yahia"
     })
 })
 
 
-app.get('/help', (req,res) => {
-    res.render('help', {
-        title: "Help page",
+app.get('/contact', (req,res) => {
+    res.render('contact', {
+        title: "Panda Weather",
         message: "Please contact via email: Majd.M4a4@gmail.com",
         name: "Majd Yahia"
     })
 })
-
 
 //Weather Page!
 app.get('/weather', (req,res) => {
@@ -56,23 +55,19 @@ app.get('/weather', (req,res) => {
         })
     }
 
-
     forecast(req.query.address, (error, forecastData) => {
         if(error){
             return res.send({ error })
         } 
-
         res.send({
             forecastData
         })
     })
    
-
-    
 })
 
 
-app.get('/help/*', (req, res) => {
+app.get('/contact/*', (req, res) => {
     res.render('404', {
         title: "404 Page",
         name: "Majd Yahia",
