@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const { response } = require('express')
 
 const geocode = require('./utils/geocode')
+const namecast = require('./utils/namecast')
 const forecast = require('./utils/forecast')
 
 const app = express()
@@ -65,6 +66,16 @@ app.get('/weather', (req,res) => {
     })
    
 })
+
+app.get('/location', (req, res) => {
+    namecast(req.lat, req.lng, (error, data)=> {
+        if(error){
+            return res.send({error});
+        }
+
+        res.send({data});
+    });
+})  
 
 
 app.get('/contact/*', (req, res) => {

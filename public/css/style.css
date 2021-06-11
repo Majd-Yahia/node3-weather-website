@@ -5,19 +5,20 @@ body {
     margin: 0 auto;
     padding: 0 16px;
 
-    display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 
+/* Footer Start
+-------------------------------------------------- */
 footer {
-    color: #888888;
-    border-top: 1px solid #eeeeee;
-    margin-top: 16px;
-    padding: 16px 0;
-    
-}
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 
 
 header {
