@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const { response } = require('express')
+const cors = require('cors')
 
 const geocode = require('./utils/geocode')
 const namecast = require('./utils/namecast')
@@ -22,6 +23,7 @@ hbs.registerPartials(partialPath)
 
 // Setup static directory to serve (for static folder index.html)
 app.use(express.static(publicDirectoryPath))
+app.use(cors())
 
 app.get('', (req, res) => {
     res.render("index", {
