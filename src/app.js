@@ -69,8 +69,10 @@ app.get('/weather', (req,res) => {
    
 })
 
-app.get('/location', (req, res) => {
-    namecast(req.lat, req.lng, (error, data)=> {
+app.get('/location/:lat,:lng', (req, res) => {
+    const lat = req.params.lat
+    const lng = req.params.lng
+    namecast(lat, lng, (error, data)=> {
         if(error){
             return res.send({error});
         }
