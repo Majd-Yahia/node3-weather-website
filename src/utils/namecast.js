@@ -13,7 +13,7 @@ const request = require('request')
 
 const namecast = (latitude, longtitude, callback) => {
     
-    const url = 'http://api.weatherstack.com/current?access_key=90235738429c99ab727baf04d15744e3&query=' + latitude + ',' + longtitude
+    const url = 'http://api.weatherstack.com/current?access_key=55df7b2d809b6d16a08f2ce1b7c73065&query=' + latitude + ',' + longtitude
     
     request({url, json: true}, (error, {body} = {}) => {
         if (error) {
